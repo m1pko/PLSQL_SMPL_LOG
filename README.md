@@ -25,21 +25,21 @@ Last but not leats you'll have the hability to handle customized error codes, si
 
 The customized message, "Error test code %1", would be used, replacing the '%1' for '49714' wich is matched with the 5th argument of the LOG_PR. If you wish you can use also a %2 and a %3 wich will match with the followinf two arguments, respectively. In this case we would have the folowing message:
 
- "Error test code 49714"
+	"Error test code 49714"
 
 
 INSTALATION GUIDE:
 
 You should execute the Oracle SQL scripts in the following order using SQLPlus:
 
-1- SEQ\LOG_ID_SEQ.sql
-2- TAB\PARAMS.sql
-3- DML\DML_PARAMS.sql
-4- TAB\ERRORCODES.sql
-5- DML\DML_ERRORCODES.sql
-6- TAB\LOGS.sql
-7- IDX\LGS_IDX1.sql
-8- PCK\LOG_PCK.sql 
+	1- SEQ\LOG_ID_SEQ.sql
+	2- TAB\PARAMS.sql
+	3- DML\DML_PARAMS.sql
+	4- TAB\ERRORCODES.sql
+	5- DML\DML_ERRORCODES.sql
+	6- TAB\LOGS.sql
+	7- IDX\LGS_IDX1.sql
+	8- PCK\LOG_PCK.sql 
 
 Be sure to check for any invalid object on your schema.
 
@@ -47,16 +47,16 @@ TESTING:
 
 The testing script is available in the following directory:
 
-DML\DML_LOGGING_TESTS.sql
+	DML\DML_LOGGING_TESTS.sql
 
 It will execute 6 diferent tests:
 
-T1 - Set the Log Level in the PARAM table to 4: Must log everything with LOG_TYPE INFO, WARNING, ERROR and FATAL
-T2 - Set the Log Level in the PARAM table to 5: Must log everything with LOG_TYPE DEBUG, INFO, WARNING, ERROR and FATAL
-T3 - Set the Log Level in the PARAM table to 2: Must log only LOG_TYPE ERROR and FATAL
-T4 - Set the Log Level in the PARAM table to 0: No log log should be generated
-T5 - Set the Log Level in the PARAM table to 2: Must log only LOG_TYPE ERROR and FATAL + Print customized error message
-T6 - Table was created with partition for a previous month; the current inserts (with the current date) should force the creation of a new table partition if it doens exist already; check if it writting in the correct partition
+	T1 - Set the Log Level in the PARAM table to 4: Must log everything with LOG_TYPE INFO, WARNING, ERROR and FATAL
+	T2 - Set the Log Level in the PARAM table to 5: Must log everything with LOG_TYPE DEBUG, INFO, WARNING, ERROR and FATAL
+	T3 - Set the Log Level in the PARAM table to 2: Must log only LOG_TYPE ERROR and FATAL
+	T4 - Set the Log Level in the PARAM table to 0: No log log should be generated
+	T5 - Set the Log Level in the PARAM table to 2: Must log only LOG_TYPE ERROR and FATAL + Print customized error message
+	T6 - Table was created with partition for a previous month; the current inserts (with the current date) should force the creation of a new table partition if it doens exist already; check if it writting in the correct partition
 
 The expected output should be something similar to this:
 
