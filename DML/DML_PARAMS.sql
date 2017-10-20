@@ -1,0 +1,12 @@
+DELETE
+  FROM PARAMS;
+
+COMMIT;
+
+INSERT INTO PARAMS (PARAM, VALUE, START_DTM, END_DTM, DESCRIPTION)
+VALUES ('LogLevel', '4', SYSDATE, NULL, 'Log Level: DEBUG-5, INFO-4, WARNING-3, ERROR-2, FATAL-1, NO_LOGS-0; Default level is INFO;');
+
+INSERT INTO PARAMS (PARAM, VALUE, START_DTM, END_DTM, DESCRIPTION)
+VALUES ('HKLookBackMonths', '2', SYSDATE, NULL, 'Valor utilizado pelo HK para saber quantos meses deve eliminar tendo por base a SYSDATE');
+
+COMMIT;
