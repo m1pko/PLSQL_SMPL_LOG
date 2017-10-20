@@ -9,7 +9,7 @@ After installing all the code, you'll just need to configure the intended log le
 	LOG_TYPE	|	LOG_LEVEL
 
 	DEBUG		|	5
-	INFO		|   4
+	INFO		|   	4
 	WARNING		|	3
 	ERROR 		|	2
 	FATAL		|	1
@@ -33,13 +33,15 @@ INSTALATION GUIDE:
 You should execute the Oracle SQL scripts in the following order using SQLPlus:
 
 	1- SEQ\LOG_ID_SEQ.sql
-	2- TAB\PARAMS.sql
+	2- TAB\PARAMS.sql *
 	3- DML\DML_PARAMS.sql
-	4- TAB\ERRORCODES.sql
+	4- TAB\ERRORCODES.sql *
 	5- DML\DML_ERRORCODES.sql
-	6- TAB\LOGS.sql
-	7- IDX\LGS_IDX1.sql
+	6- TAB\LOGS.sql *
+	7- IDX\LGS_IDX1.sql *
 	8- PCK\LOG_PCK.sql 
+
+	* - This scripts will prompt you for a TABLESPACE specification, which will vary from DB to DB and according to the space required/estimated growth that each object will have;
 
 Be sure to check for any invalid object on your schema.
 
