@@ -21,7 +21,7 @@ The package also includes a simple House Keeping (HK) procedure that will delete
 
 Last but not leats you'll have the hability to handle customized error codes, simply by difining them in the ERRORCODES table and setting up to 3 variables to be replaced in order to provide context for the error at hand. For example, the following LOG_PR call, will check the ERRORCODES table for the ERROR_CODE = 49714 and, if found, it will replace the provided message for a customized one:
 
-	LOG_PKG.LOG_PR ('ERROR', 49714, 'Log message', V_PROC_NAME, 49714, NULL, NULL);
+	LOG_PKG.LOG_PR ('ERROR', 49714, 'Log message', 'PROC_NAME', 49714, NULL, NULL);
 
 The customized message, "Error test code %1", would be used, replacing the '%1' for '49714' wich is matched with the 5th argument of the LOG_PR. If you wish you can use also a %2 and a %3 wich will match with the followinf two arguments, respectively. In this case we would have the folowing message:
 
@@ -41,7 +41,7 @@ You should execute the Oracle SQL scripts in the following order using SQLPlus:
 	7- IDX\LGS_IDX1.sql *
 	8- PCK\LOG_PCK.sql 
 
-	* - This scripts will prompt you for a TABLESPACE specification, which will vary from DB to DB and according to the space required/estimated growth that each object will have;
+	* This scripts will prompt you for a TABLESPACE specification, which will vary from DB to DB and according to the space required/estimated growth that each object will have;
 
 Be sure to check for any invalid object on your schema.
 
